@@ -11,19 +11,49 @@
  * Output: true se a sentença é um palídromo, falso caso negativo.
  */
 
-bool isPalindrome (char sentence[], int length) {
+bool isPalindrome(char sentence[], int length)
+{
     printf("\nisPalindrome::START: %s, %d\n", sentence, length);
-
+    int center, x;
     // TODO: YOUR CODE HERE!
-    
-    printf("\nisPalindrome::END\n");
-    return false;
+    if (length % 2) // check if the number is not pair
+    {
+        center = length / 2;
+        for (x = 1; x <= center; x++)
+        {
+            if (sentence[center - x] != sentence[center + x])
+            {
+                printf("false");
+                printf("\nisPalindrome::END\n");
+                return false;
+            }
+        }
+        printf("true");
+        printf("\nisPalindrome::END\n");
+        return true;
+    }
+    else // So it is pair
+    {
+        center = length / 2;
+        for (x = 0; x < center; x++)
+        {
+            if (sentence[center - (x + 1)] != sentence[center + x])
+            {
+                printf("false");
+                printf("\nisPalindrome::END\n");
+                return false;
+            }
+        }
+        printf("true");
+        printf("\nisPalindrome::END\n");
+        return true;
+    }
 }
 
 int main()
 {
     printf("\n### CESAR School :: Sistemas Digitais :: Coding1 :: Palindrome ###\n");
-    
+
     // true cases
     isPalindrome("ovo", 3);
     isPalindrome("arara", 5);
@@ -34,4 +64,3 @@ int main()
 
     return 0;
 }
- 
