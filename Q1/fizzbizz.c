@@ -45,7 +45,7 @@ void fizzBizz(int start, int end)
         printf("\n");
     }
 
-    printf("\nFizzBizz::END\n");
+    printf("FizzBizz::END\n");
 }
 
 int main()
